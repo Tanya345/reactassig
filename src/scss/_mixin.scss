@@ -1,0 +1,10 @@
+@mixin flexCode($pad1, $pad2) {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: $pad1 $pad2;
+}
+@mixin labelCode($pad1,$pad2,$color){
+	padding:$pad1 $pad2;
+	color:$color;
+}

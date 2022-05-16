@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, createContext } from 'react'
+import bgImage from './bgImage.png';
+import styles from './scss/App.module.scss';
+import './scss/Global.scss'
+import Form from './components/Form';
+import D3_BarChart from './components/D3_BarChart';
 
+export const MyContext = createContext([])
 function App() {
+
+  const [isSubmit, setIsSubmit] = useState(false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MyContext.Provider value={{ isSubmit, setIsSubmit }}>
+      <div className={styles.App}>
+        {!isSubmit ?
+          <>
+            <div className={styles.App__imgDiv}>
+              <img src={bgImage} alt="img" className={styles.App__img} />
+              <div className={styles.App__childDiv}>
+                <h2>Choose a date range</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem commodi accusamus deserunt minus temporibus sunt velit similique ab?</p>
+              </div>
+            </div>
+            <Form />
+          </> : <D3_BarChart width={600} height={400} />}
+
+      </div>
+    </MyContext.Provider>
   );
 }
 

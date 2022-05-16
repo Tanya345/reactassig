@@ -1,0 +1,73 @@
+@import "mixin";
+
+.FormDiv{
+	@include flexCode(5px, 5rem);
+    width: 55%;
+    height: -webkit-fill-available;
+	box-shadow: 12px 35px 116px #888888;
+	margin: 8px;
+	margin-left: 4px;
+}
+.FormDiv__form{
+	@include flexCode(0.4rem,0.4rem);
+}
+
+.FormDiv__heading{
+	padding:0 0.4rem;
+	margin-bottom: 25px;
+}
+
+.FormDiv__label{
+	@include labelCode(4px,0,#312c2cf2);
+	margin-top: 10px;
+}
+
+.FormDiv__label--agree{
+	@include labelCode(4px, 1rem,black);
+}
+
+.FormDiv__input{
+	padding: 4px;
+	height: 5vh;
+	margin-top: 6px;
+	margin-bottom: 5px;
+}
+
+.FormDiv__error{
+	color:#dc3545;
+	padding: 0px;
+	// font-size: 0.8rem;
+}
+
+.FormDiv__inputAgree{
+	height: 28px;
+	width: 16px;
+	margin-top: 10px;
+}
+.FormDiv__divAgree{
+	@include flexCode(0, 0)
+}
+
+.FormDiv__childDivAgree{
+	align-items: center;
+	display: flex;
+}
+
+.FormDiv__btn{
+	padding: inherit;
+    width: 50%;
+    margin-top: 1.7rem;
+    color: white;
+    background-color: #0d6efd;
+	cursor: pointer;
+}
+
+@media screen and (max-width:600px) {
+	.FormDiv{
+		padding: 1rem 3.5rem;
+		margin: 1rem;
+		margin-top: 3rem;
+		width: -webkit-fill-available;
+	}
+	
+}

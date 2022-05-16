@@ -1,0 +1,10 @@
+@import "mixin";
+
+.Chart{
+	@include flexCode(0,0);
+    height: inherit;
+    align-items: center;
+    background-color: #1d1b1bcf;
+    width: -webkit-fill-available;
+    color: white;
+}
